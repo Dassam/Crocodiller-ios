@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		799674E15E953209E3141507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799675C87998716191BCBC41 /* AppDelegate.swift */; };
+		79967504F058153D2FE02648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799672257EF473CAE2E8DFCC /* Assets.xcassets */; };
+		79967768F1CA3E6752EA3721 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 79967FB6DE96539861412CD6 /* .gitignore */; };
+		799678903698B42A9D88B3B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79967F5429F53F3CC841BB89 /* ViewController.swift */; };
+		799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */; };
+		799679F6AC918167AA2956ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */; };
+		79967C6C576D8106C85FF5CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79967D91AB102D478649F0F2 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		799671C461B9FF59D276D59A /* Crocodiller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crocodiller.xcdatamodel; sourceTree = "<group>"; };
+		799672257EF473CAE2E8DFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		799675C87998716191BCBC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7996776061399F3500493928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79967924EC25640341E0A952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		799679BD92215DF7C10FD36E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		79967F5429F53F3CC841BB89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79967FB6DE96539861412CD6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
+		79967FFE92651EA7D48E125D /* Crocodiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crocodiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79967F0875075F951F736030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7996724923E7FD99C8494925 = {
+			isa = PBXGroup;
+			children = (
+				79967AD0968188077BCD450F /* Products */,
+				799675B9358522DE769C2D5D /* Crocodiller */,
+				79967FB6DE96539861412CD6 /* .gitignore */,
+			);
+			sourceTree = "<group>";
+		};
+		799675B9358522DE769C2D5D /* Crocodiller */ = {
+			isa = PBXGroup;
+			children = (
+				799679BD92215DF7C10FD36E /* Info.plist */,
+				799672257EF473CAE2E8DFCC /* Assets.xcassets */,
+				7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */,
+				799675C87998716191BCBC41 /* AppDelegate.swift */,
+				799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */,
+				79967D91AB102D478649F0F2 /* Main.storyboard */,
+				79967F5429F53F3CC841BB89 /* ViewController.swift */,
+			);
+			path = Crocodiller;
+			sourceTree = "<group>";
+		};
+		79967AD0968188077BCD450F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79967FFE92651EA7D48E125D /* Crocodiller.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		799673624E9154877B21D7DA /* Crocodiller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79967515A2237251567734CA /* Build configuration list for PBXNativeTarget "Crocodiller" */;
+			buildPhases = (
+				79967DEDEFD66862D2B4CABC /* Sources */,
+				79967F0875075F951F736030 /* Frameworks */,
+				799673E9F5417EEB7397DDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Crocodiller;
+			productName = Crocodiller;
+			productReference = 79967FFE92651EA7D48E125D /* Crocodiller.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79967C4E2C48645C4F1F910D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = YandI;
+			};
+			buildConfigurationList = 7996719AFB885B4370921F45 /* Build configuration list for PBXProject "Crocodiller" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7996724923E7FD99C8494925;
+			productRefGroup = 79967AD0968188077BCD450F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				799673624E9154877B21D7DA /* Crocodiller */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		799673E9F5417EEB7397DDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79967504F058153D2FE02648 /* Assets.xcassets in Resources */,
+				799679F6AC918167AA2956ED /* LaunchScreen.storyboard in Resources */,
+				79967C6C576D8106C85FF5CD /* Main.storyboard in Resources */,
+				79967768F1CA3E6752EA3721 /* .gitignore in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79967DEDEFD66862D2B4CABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				799674E15E953209E3141507 /* AppDelegate.swift in Sources */,
+				799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */,
+				799678903698B42A9D88B3B7 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7996776061399F3500493928 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		79967D91AB102D478649F0F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79967924EC25640341E0A952 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		799671504335ED10E46877AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		79967182C6890D929E742903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79967B14B73CE1CB73FD8E61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Crocodiller/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandi.Crocodiller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79967DD2E7B53C11B2B60928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Crocodiller/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandi.Crocodiller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7996719AFB885B4370921F45 /* Build configuration list for PBXProject "Crocodiller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				799671504335ED10E46877AF /* Debug */,
+				79967182C6890D929E742903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79967515A2237251567734CA /* Build configuration list for PBXNativeTarget "Crocodiller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79967B14B73CE1CB73FD8E61 /* Debug */,
+				79967DD2E7B53C11B2B60928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				799671C461B9FF59D276D59A /* Crocodiller.xcdatamodel */,
+			);
+			currentVersion = 799671C461B9FF59D276D59A /* Crocodiller.xcdatamodel */;
+			path = Crocodiller.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 79967C4E2C48645C4F1F910D /* Project object */;
+}
