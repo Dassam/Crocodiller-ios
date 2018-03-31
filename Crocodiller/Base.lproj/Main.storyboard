@@ -29,7 +29,7 @@
                                 </constraints>
                                 <state key="normal" title="Новая игра"/>
                                 <connections>
-                                    <segue destination="ZVA-J4-u7U" kind="show" id="F2T-Dv-0is"/>
+                                    <segue destination="mbc-M2-oaZ" kind="show" id="qgq-en-2hP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,20 +50,92 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="25.637181409295355"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ZoK-Qf-r2D">
+        <!--Second View Controller-->
+        <scene sceneID="OZ9-Gk-dL5">
             <objects>
-                <viewController id="ZVA-J4-u7U" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MfG-7k-gzA">
+                <viewController id="mbc-M2-oaZ" customClass="SecondViewController" customModule="Crocodiller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Hn-k8-lZX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слово" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zof-un-JhO">
+                                <rect key="frame" x="16" y="46" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOI-oC-IRu">
+                                <rect key="frame" x="16" y="147" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV9-bM-9SS">
+                                <rect key="frame" x="45" y="293" width="120" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5u0-BS-9pl"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="LeftButtonClc:" destination="mbc-M2-oaZ" eventType="touchUpInside" id="et1-lZ-4Kc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppi-cN-KYY">
+                                <rect key="frame" x="210" y="293" width="120" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="lpJ-xG-bio"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="RightButtonClc:" destination="mbc-M2-oaZ" eventType="touchUpInside" id="WPe-Oo-u74"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очки: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNf-TM-VVT">
+                                <rect key="frame" x="16" y="606" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-PM-llC">
+                                <rect key="frame" x="16" y="505" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="4OZ-aA-xmn"/>
+                        <constraints>
+                            <constraint firstItem="vV9-bM-9SS" firstAttribute="leading" secondItem="mvT-wr-8oQ" secondAttribute="leading" constant="45" id="0u3-jE-qNk"/>
+                            <constraint firstItem="vV9-bM-9SS" firstAttribute="centerY" secondItem="9Hn-k8-lZX" secondAttribute="centerY" id="4fr-LP-rz1"/>
+                            <constraint firstItem="UNf-TM-VVT" firstAttribute="leading" secondItem="mvT-wr-8oQ" secondAttribute="leading" constant="16" id="9r3-av-fYe"/>
+                            <constraint firstItem="C5W-PM-llC" firstAttribute="leading" secondItem="mvT-wr-8oQ" secondAttribute="leading" constant="16" id="CfG-9A-Hgp"/>
+                            <constraint firstItem="XOI-oC-IRu" firstAttribute="top" secondItem="zof-un-JhO" secondAttribute="bottom" constant="60" id="Fy5-4a-n7c"/>
+                            <constraint firstItem="XOI-oC-IRu" firstAttribute="leading" secondItem="mvT-wr-8oQ" secondAttribute="leading" constant="16" id="Kak-h0-Odo"/>
+                            <constraint firstItem="UNf-TM-VVT" firstAttribute="top" secondItem="C5W-PM-llC" secondAttribute="bottom" constant="60" id="MIP-hW-c5S"/>
+                            <constraint firstItem="mvT-wr-8oQ" firstAttribute="trailing" secondItem="XOI-oC-IRu" secondAttribute="trailing" constant="16" id="Yx5-Nv-8aN"/>
+                            <constraint firstItem="mvT-wr-8oQ" firstAttribute="bottom" secondItem="UNf-TM-VVT" secondAttribute="bottom" constant="20" id="asM-tt-bjf"/>
+                            <constraint firstItem="zof-un-JhO" firstAttribute="leading" secondItem="mvT-wr-8oQ" secondAttribute="leading" constant="16" id="dBU-hJ-vlh"/>
+                            <constraint firstItem="mvT-wr-8oQ" firstAttribute="trailing" secondItem="zof-un-JhO" secondAttribute="trailing" constant="16" id="eyy-o5-hhT"/>
+                            <constraint firstItem="mvT-wr-8oQ" firstAttribute="trailing" secondItem="C5W-PM-llC" secondAttribute="trailing" constant="16" id="j3w-rI-Hc5"/>
+                            <constraint firstItem="mvT-wr-8oQ" firstAttribute="trailing" secondItem="ppi-cN-KYY" secondAttribute="trailing" constant="45" id="k6u-Ch-oRm"/>
+                            <constraint firstItem="mvT-wr-8oQ" firstAttribute="trailing" secondItem="UNf-TM-VVT" secondAttribute="trailing" constant="16" id="naI-AZ-G18"/>
+                            <constraint firstItem="zof-un-JhO" firstAttribute="top" secondItem="mvT-wr-8oQ" secondAttribute="top" constant="26" id="tou-Wt-hHa"/>
+                            <constraint firstItem="ppi-cN-KYY" firstAttribute="centerY" secondItem="9Hn-k8-lZX" secondAttribute="centerY" id="xXg-6k-xsH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mvT-wr-8oQ"/>
                     </view>
+                    <connections>
+                        <outlet property="leftButton" destination="vV9-bM-9SS" id="OJD-2i-rgv"/>
+                        <outlet property="points" destination="XOI-oC-IRu" id="5aE-Jb-CTQ"/>
+                        <outlet property="rightButton" destination="ppi-cN-KYY" id="XFj-jC-4eE"/>
+                        <outlet property="score" destination="UNf-TM-VVT" id="Z2f-Nd-mhH"/>
+                        <outlet property="time" destination="C5W-PM-llC" id="XPF-Hw-F0I"/>
+                        <outlet property="word" destination="zof-un-JhO" id="U0d-dF-jgz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MdW-gI-IEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEu-9L-tbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="26"/>
+            <point key="canvasLocation" x="784.79999999999995" y="25.637181409295355"/>
         </scene>
     </scenes>
     <resources>
