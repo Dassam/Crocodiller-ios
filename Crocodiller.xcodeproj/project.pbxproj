@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A483BD7206E58BC005B370D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A483BD6206E58BC005B370D /* SecondViewController.swift */; };
+		5A33BBA62070380E00BE4DD5 /* LineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */; };
+		5A483BD7206E58BC005B370D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A483BD6206E58BC005B370D /* GameViewController.swift */; };
+		5A52521D2070016100AEDDFE /* pattern_leather.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A52521C2070016000AEDDFE /* pattern_leather.png */; };
 		79967181FF2853099C894A90 /* CardLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79967919448A4A7CFE96E15B /* CardLine.swift */; };
 		799674E15E953209E3141507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799675C87998716191BCBC41 /* AppDelegate.swift */; };
 		79967504F058153D2FE02648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799672257EF473CAE2E8DFCC /* Assets.xcassets */; };
@@ -16,13 +18,19 @@
 		799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */; };
 		799679F6AC918167AA2956ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */; };
 		79967C6C576D8106C85FF5CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79967D91AB102D478649F0F2 /* Main.storyboard */; };
+		79967E06ACDE2B49D16CECAE /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7996768C2FA9A1EFE874929F /* MyColors.swift */; };
+		79967E74452844612AEFCCFD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7996765D82178B6A76B0AD2C /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A483BD6206E58BC005B370D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGenerator.swift; sourceTree = "<group>"; };
+		5A483BD6206E58BC005B370D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5A52521C2070016000AEDDFE /* pattern_leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern_leather.png; sourceTree = "<group>"; };
 		799671C461B9FF59D276D59A /* Crocodiller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crocodiller.xcdatamodel; sourceTree = "<group>"; };
 		799672257EF473CAE2E8DFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799675C87998716191BCBC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7996765D82178B6A76B0AD2C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		7996768C2FA9A1EFE874929F /* MyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		7996776061399F3500493928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79967919448A4A7CFE96E15B /* CardLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLine.swift; sourceTree = "<group>"; };
 		79967924EC25640341E0A952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				79967F5429F53F3CC841BB89 /* ViewController.swift */,
-				5A483BD6206E58BC005B370D /* SecondViewController.swift */,
+				5A483BD6206E58BC005B370D /* GameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -59,6 +67,7 @@
 				79967AD0968188077BCD450F /* Products */,
 				799675B9358522DE769C2D5D /* Crocodiller */,
 				79967FB6DE96539861412CD6 /* .gitignore */,
+				5A52521C2070016000AEDDFE /* pattern_leather.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +80,9 @@
 				7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */,
 				799675C87998716191BCBC41 /* AppDelegate.swift */,
 				79967919448A4A7CFE96E15B /* CardLine.swift */,
+				7996768C2FA9A1EFE874929F /* MyColors.swift */,
+				7996765D82178B6A76B0AD2C /* Utils.swift */,
+				5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */,
 				799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */,
 			);
 			path = Crocodiller;
@@ -137,6 +149,7 @@
 				79967504F058153D2FE02648 /* Assets.xcassets in Resources */,
 				799679F6AC918167AA2956ED /* LaunchScreen.storyboard in Resources */,
 				79967C6C576D8106C85FF5CD /* Main.storyboard in Resources */,
+				5A52521D2070016100AEDDFE /* pattern_leather.png in Resources */,
 				79967768F1CA3E6752EA3721 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,11 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A483BD7206E58BC005B370D /* SecondViewController.swift in Sources */,
+				5A483BD7206E58BC005B370D /* GameViewController.swift in Sources */,
 				799674E15E953209E3141507 /* AppDelegate.swift in Sources */,
 				799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */,
 				799678903698B42A9D88B3B7 /* ViewController.swift in Sources */,
 				79967181FF2853099C894A90 /* CardLine.swift in Sources */,
+				5A33BBA62070380E00BE4DD5 /* LineGenerator.swift in Sources */,
+				79967E06ACDE2B49D16CECAE /* MyColors.swift in Sources */,
+				79967E74452844612AEFCCFD /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
