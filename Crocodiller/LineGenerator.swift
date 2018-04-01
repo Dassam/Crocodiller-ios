@@ -10,34 +10,70 @@ import UIKit
 
 class LineGenerator {
 
-    let cardLines: [CardLine] = [
-        CardLine.init(word: "гореть", points: 5),
-        CardLine.init(word: "сабля", points: 3),
-        CardLine.init(word: "горка", points: 2),
-        CardLine.init(word: "кулак", points: 4),
-        CardLine.init(word: "нет", points: 1)
-    ]
+    let cardLines: [CardLine]
+
+    let deckJSON = """
+{
+  "card_lines": [
+    {
+      "pk": 126,
+      "word": "кулич",
+      "score": 2
+    },
+    {
+      "pk": 127,
+      "word": "улитка",
+      "score": 2
+    },
+    {
+      "pk": 128,
+      "word": "консистенция",
+      "score": 5
+    },
+    {
+      "pk": 129,
+      "word": "креветка",
+      "score": 3
+    },
+    {
+      "pk": 130,
+      "word": "коммунизм",
+      "score": 5
+    }
+  ]
+}
+""".data(using: .utf8)!
 
     var cardLinesActive: [CardLine] = []
 
     init() {
-        regenerate()
+
+        do {
+            let decoder = JSONDecoder()
+            let deck: Deck = try decoder.decode(Deck.self, from: deckJSON)
+            cardLines = deck.cardLines
+            regenerate()
+        } catch let err {
+            print("Err", err)
+            cardLines = []
+        }
+
     }
 
-    func regenerate(){
+    func regenerate() {
         cardLinesActive = cardLines
     }
 
     func hasAnyLine() -> Bool {
-        return  (cardLinesActive.count > 0 )
+        return (cardLinesActive.count > 0)
     }
 
-    func nextLine() -> CardLine{
+    func nextLine() -> CardLine {
         var index = arc4random_uniform(UInt32(cardLinesActive.count));
         return cardLinesActive.remove(at: Int(index))
     }
 
-    func getAvailableLineCount()-> Int{
+    func getAvailableLineCount() -> Int {
         return cardLinesActive.count
     }
 }

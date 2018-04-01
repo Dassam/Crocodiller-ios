@@ -8,13 +8,18 @@
 
 import UIKit
 
-class CardLine {
+class CardLine: Codable {
 
-    var word: String
-    var points: Int
+    let word: String?
+    let points: Int?
 
     init(word: String, points: Int) {
         self.word = word
         self.points = points
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case word
+        case points = "score"
     }
 }

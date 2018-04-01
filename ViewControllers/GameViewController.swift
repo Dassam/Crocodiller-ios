@@ -47,7 +47,7 @@ class SecondViewController: UIViewController {
         currentCardLine = lineGenerator.nextLine()
 
         word.text = currentCardLine.word
-        points.text = "+" + String(currentCardLine.points)
+        points.text = "+" + String(currentCardLine.points!)
         score.text = "Очки:" +  String(totalScore)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SecondViewController.counter), userInfo: nil, repeats: true)
     }
@@ -71,7 +71,7 @@ class SecondViewController: UIViewController {
         } else {
             currentCardLine = lineGenerator.nextLine()
             word.text = currentCardLine.word
-            points.text = "+" + String(currentCardLine.points)
+            points.text = "+" + String(currentCardLine.points!)
         }
 
     }
@@ -83,7 +83,7 @@ class SecondViewController: UIViewController {
     
     @IBAction func LeftButtonClc(_ sender: Any) {
 
-        totalScore = totalScore + currentCardLine.points
+        totalScore = totalScore + currentCardLine.points!
 
         newWordSelection()
 
