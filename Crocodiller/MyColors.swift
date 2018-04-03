@@ -8,30 +8,30 @@
 
 import UIKit
 
-extension UIColor{
+extension UIColor {
 
-   /* static func colorPrimary() -> UIColor{
-        return Utils.UIColorFromRGB(0x37975f)
+    class var colorPrimary: UIColor {
+        return UIColor(red: 55.0 / 255.0, green: 151.0 / 255.0, blue: 95.0 / 255.0, alpha: 1.0)
     }
 
-    static func colorPrimaryDark() -> UIColor{
-        return Utils.UIColorFromRGB(0x338b57)
+    class var colorPrimaryDark: UIColor {
+        return UIColor(red: 51.0 / 255.0, green: 139.0 / 255.0, blue: 87.0 / 255.0, alpha: 1.0)
     }
 
-    static func colorAccent() -> UIColor{
-        return Utils.UIColorFromRGB(0xe67399)
+    class var colorAccent: UIColor {
+        return UIColor(red: 230.0 / 255.0, green: 115.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
     }
 
-    static func colorRed() -> UIColor{
-        return Utils.UIColorFromARGB(0xffae2700)
+    class var colorRed: UIColor {
+        return UIColor(red: 174.0 / 255.0, green: 39.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
     }
 
-    static func colorRedTransparent() -> UIColor{
-        return Utils.UIColorFromARGB(0xb2ae2700)
+    class var colorRedTransparent: UIColor {
+        return UIColor(red: 174.0 / 255.0, green: 39.0 / 255.0, blue: 0.0 / 255.0, alpha: 0.7)
     }
 
-    static func error() -> UIColor{
-        return Utils.UIColorFromRGB(0xff0000)
+    class var error: UIColor {
+        return UIColor(red: 1, green: 0, blue: 0, alpha: 1.0)
     }
-    */
+
 }
