@@ -15,6 +15,7 @@
 		799674E15E953209E3141507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799675C87998716191BCBC41 /* AppDelegate.swift */; };
 		79967504F058153D2FE02648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799672257EF473CAE2E8DFCC /* Assets.xcassets */; };
 		799675A56B6F0EAEFC1D0788 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799672FFCE85601009A5811A /* Deck.swift */; };
+		7996761B79C7894F20F2AA09 /* PlayersValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79967DC8083420BAF0E2CE9F /* PlayersValidator.swift */; };
 		79967768F1CA3E6752EA3721 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 79967FB6DE96539861412CD6 /* .gitignore */; };
 		799678903698B42A9D88B3B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79967F5429F53F3CC841BB89 /* ViewController.swift */; };
 		799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */; };
@@ -36,7 +37,8 @@
 		7996776061399F3500493928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79967919448A4A7CFE96E15B /* CardLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLine.swift; sourceTree = "<group>"; };
 		79967924EC25640341E0A952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		799679BD92215DF7C10FD36E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799679BD92215DF7C10FD36E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		79967DC8083420BAF0E2CE9F /* PlayersValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersValidator.swift; sourceTree = "<group>"; };
 		79967F5429F53F3CC841BB89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79967FB6DE96539861412CD6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		79967FFE92651EA7D48E125D /* Crocodiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crocodiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,42 +55,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A483BD8206E58CA005B370D /* ViewControllers */ = {
+		5A85A00D20753FA6004BFF6E /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				79967F5429F53F3CC841BB89 /* ViewController.swift */,
+				5A85A01320754047004BFF6E /* Model */,
+				5A85A01020753FF8004BFF6E /* View */,
+				5A85A0112075402E004BFF6E /* Controller */,
+				5A85A0122075403A004BFF6E /* Service */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		5A85A01020753FF8004BFF6E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79967D91AB102D478649F0F2 /* Main.storyboard */,
+				7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */,
+				7996768C2FA9A1EFE874929F /* MyColors.swift */,
+				799672257EF473CAE2E8DFCC /* Assets.xcassets */,
+				5A52521C2070016000AEDDFE /* pattern_leather.png */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A85A0112075402E004BFF6E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				799675C87998716191BCBC41 /* AppDelegate.swift */,
 				5AE76FD12072464800D513CC /* ChoosePlayersViewController.swift */,
 				5A483BD6206E58BC005B370D /* GameViewController.swift */,
+				79967F5429F53F3CC841BB89 /* ViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A85A0122075403A004BFF6E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5A85A01320754047004BFF6E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				799672FFCE85601009A5811A /* Deck.swift */,
+				79967919448A4A7CFE96E15B /* CardLine.swift */,
+				5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */,
+				79967DC8083420BAF0E2CE9F /* PlayersValidator.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7996724923E7FD99C8494925 = {
 			isa = PBXGroup;
 			children = (
-				5A483BD8206E58CA005B370D /* ViewControllers */,
-				79967AD0968188077BCD450F /* Products */,
-				799675B9358522DE769C2D5D /* Crocodiller */,
-				799672257EF473CAE2E8DFCC /* Assets.xcassets */,
 				799679BD92215DF7C10FD36E /* Info.plist */,
+				5A85A00D20753FA6004BFF6E /* Post */,
+				79967AD0968188077BCD450F /* Products */,
 				799677399C14BD6B61971AAD /* Crocodiller.xcdatamodeld */,
 				79967FB6DE96539861412CD6 /* .gitignore */,
-				5A52521C2070016000AEDDFE /* pattern_leather.png */,
 			);
-			sourceTree = "<group>";
-		};
-		799675B9358522DE769C2D5D /* Crocodiller */ = {
-			isa = PBXGroup;
-			children = (
-				79967D91AB102D478649F0F2 /* Main.storyboard */,
-				7996774FC258DEE4C38CD16A /* LaunchScreen.storyboard */,
-				799675C87998716191BCBC41 /* AppDelegate.swift */,
-				79967919448A4A7CFE96E15B /* CardLine.swift */,
-				7996768C2FA9A1EFE874929F /* MyColors.swift */,
-				5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */,
-				799672FFCE85601009A5811A /* Deck.swift */,
-			);
-			path = Crocodiller;
 			sourceTree = "<group>";
 		};
 		79967AD0968188077BCD450F /* Products */ = {
@@ -173,6 +200,7 @@
 				5AE76FD22072464800D513CC /* ChoosePlayersViewController.swift in Sources */,
 				79967E06ACDE2B49D16CECAE /* MyColors.swift in Sources */,
 				799675A56B6F0EAEFC1D0788 /* Deck.swift in Sources */,
+				7996761B79C7894F20F2AA09 /* PlayersValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

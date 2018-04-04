@@ -48,28 +48,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qHJ-Ef-vbM"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="qHJ-Ef-vbM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="372" y="25.637181409295355"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="OZ9-Gk-dL5">
             <objects>
-                <viewController id="mbc-M2-oaZ" customClass="SecondViewController" customModule="Crocodiller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mbc-M2-oaZ" customClass="GameViewController" customModule="Crocodiller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Hn-k8-lZX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слово" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zof-un-JhO">
-                                <rect key="frame" x="16" y="90" width="343" height="41"/>
+                                <rect key="frame" x="16" y="46" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOI-oC-IRu">
-                                <rect key="frame" x="16" y="191" width="343" height="41"/>
+                                <rect key="frame" x="16" y="147" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -152,7 +152,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B1k-Ww-92T">
-                                <rect key="frame" x="0.0" y="184" width="375" height="363"/>
+                                <rect key="frame" x="0.0" y="236" width="375" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tJu-pX-UqB" id="o8s-Yx-z7a"/>
@@ -170,11 +170,11 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mbc-M2-oaZ" kind="show" id="x8r-a8-ODr"/>
+                                    <action selector="nextVC:" destination="tJu-pX-UqB" eventType="touchUpInside" id="HDH-Og-Po5"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoloPlayerImage" translatesAutoresizingMaskIntoConstraints="NO" id="eog-0Y-OD4">
-                                <rect key="frame" x="50" y="82" width="80" height="80"/>
+                                <rect key="frame" x="50" y="134" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="AQh-JN-WJF"/>
                                     <constraint firstAttribute="height" constant="80" id="Hju-dx-yvW"/>
@@ -194,7 +194,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KfO-Dc-UQs"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Игроки" id="avu-fS-Wpa">
+                    <navigationItem key="navigationItem" title="Игроки" largeTitleDisplayMode="always" id="avu-fS-Wpa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DeV-yx-DN4">
                             <connections>
                                 <action selector="addPlayer:" destination="tJu-pX-UqB" id="YF5-L8-37b"/>
@@ -202,6 +202,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNewPlayerButton" destination="DeV-yx-DN4" id="wrM-qU-9xl"/>
                         <outlet property="newGameButton" destination="lba-9P-835" id="vEc-Ci-t3u"/>
                         <outlet property="playersTableView" destination="B1k-Ww-92T" id="aRr-yq-pOg"/>
                         <outlet property="soloGameImage" destination="eog-0Y-OD4" id="CZX-d6-qua"/>
@@ -216,9 +217,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mUN-xG-yfc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1DE-EP-Udv">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1DE-EP-Udv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class GameViewController: UIViewController {
 
     @IBOutlet var word: UILabel!
     @IBOutlet var points: UILabel!
@@ -49,7 +49,7 @@ class SecondViewController: UIViewController {
         word.text = currentCardLine.word
         points.text = "+" + String(currentCardLine.points!)
         score.text = "Очки:" +  String(totalScore)
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SecondViewController.counter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
     }
 
 
@@ -58,7 +58,7 @@ class SecondViewController: UIViewController {
         timer.invalidate()
         time.text = "60"
         seconds = 60
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SecondViewController.counter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
 
         if (!lineGenerator.hasAnyLine()) {
             let alert = UIAlertController(title: "Конец", message: "Спасибо за игру", preferredStyle: .alert)
