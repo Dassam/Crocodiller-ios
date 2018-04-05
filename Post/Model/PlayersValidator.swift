@@ -10,41 +10,25 @@ import UIKit
 
 class PlayersValidator {
 
-    var checkIsOk: Bool?
 
-    func lessThenMinimumPlayers(players: [String]) -> Bool {
-        if (players.count < 3) {
-            checkIsOk = true
-        } else {
-            checkIsOk = false
-        }
-        return checkIsOk!
+    func lessThenMinimumPlayers(players: [Player]) -> Bool {
+        return players.count < 3
     }
 
-    func moreThenMaximumPlayers(players: [String]) -> Bool {
-        if (players.count >= 7) {
-            checkIsOk = true
-        } else {
-            checkIsOk = false
-        }
-        return checkIsOk!
+    func moreThenMaximumPlayers(players: [Player]) -> Bool {
+        return players.count >= 7
     }
 
-    func noEmptyNames(players: [String]) -> Bool {
-
-        return checkIsOk!
-    }
-
-    func IdenticalNames(players: [String]) -> Bool {
-        checkIsOk = false
+    func IdenticalNames(players: [Player]) -> Bool {
+        var checkFailed = false
         for i in 0...players.count - 2 {
             for j in i + 1...players.count - 1 {
-                if (players[i].trimmingCharacters(in: .whitespacesAndNewlines) == players[j].trimmingCharacters(in: .whitespacesAndNewlines)){
-                    checkIsOk = true
+                if (players[i].name! == players[j].name!) {
+                    checkFailed = true
                     break
                 }
             }
         }
-        return checkIsOk!
+        return checkFailed
     }
 }

@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var soloGameImage: UIImageView!
     @IBOutlet var playersTableView: UITableView!
     @IBOutlet var newGameButton: UIButton!
     @IBOutlet var addNewPlayerButton: UIBarButtonItem!
+    @IBOutlet var soloGameButton: UIButton!
+    @IBOutlet var multiPlaeyrGameButton: UIButton!
 
-    var players = [String]()
+
+    var players = [Player]()
     var playersValidator: PlayersValidator?
 
     override func viewDidLoad() {
+
+        let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
+
+        do {
+            let players = try PersistenceService.context.fetch(fetchRequest)
+            self.players = players
+            self.playersTableView.reloadData()
+        } catch {
+        }
 
         playersTableView.delegate = self
         playersTableView.dataSource = self
@@ -43,11 +55,13 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
 
             alert.addAction(UIAlertAction(title: "Добавить", style: .default, handler: { _ in
 
-                if (alert.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
-                    guard let player = alert.textFields?.first?.text else {
+                if (alert.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
+                    guard let name = alert.textFields?.first?.text!.trimmingCharacters(in: .whitespacesAndNewlines) else {
                         return
                     }
-                    print(player)
+                    let player = Player(context: PersistenceService.context)
+                    player.name = name
+                    PersistenceService.saveContext()
                     self.players.append(player)
                     self.playersTableView.reloadData()
                 } else {
@@ -76,12 +90,13 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         } else {
-            let gameVC = storyboard?.instantiateViewController(withIdentifier: "GameVC")
-            self.navigationController?.pushViewController(gameVC!, animated: true)
+            let resultsVC = storyboard?.instantiateViewController(withIdentifier: "ResultsVC")
+            self.navigationController?.pushViewController(resultsVC!, animated: true)
         }
 
     }
 
+//----------------------- Работа с таблицей-----------------------------------//
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -93,7 +108,7 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let player = players[indexPath.row]
+        let player = players[indexPath.row].name
         cell.textLabel?.text = player
 
         return cell
@@ -103,18 +118,25 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
         guard editingStyle == .delete else {
             return
         }
-        players.remove(at: indexPath.row)
+
+        //PersistenceService.context.delete(object)
+        //PersistenceService.context.save(updatedObject)﻿
+
+
+        self.players.remove(at: indexPath.row)
+        PersistenceService.saveContext()
         playersTableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: nil, message: "Редактировать имя игрока", preferredStyle: .alert)
         alert.addTextField() { (playerTF) in
-            playerTF.text = self.players[indexPath.row]
+            playerTF.text = self.players[indexPath.row].name
         }
 
         alert.addAction(UIAlertAction(title: "Принять", style: .default, handler: { _ in
-            self.players[indexPath.row] = (alert.textFields?.first?.text)!
+            self.players[indexPath.row].name = alert.textFields?.first?.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            PersistenceService.saveContext()
             self.playersTableView.reloadData()
         }))
 
