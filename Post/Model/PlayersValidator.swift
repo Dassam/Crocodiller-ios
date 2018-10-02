@@ -10,13 +10,25 @@ import UIKit
 
 class PlayersValidator {
 
+    var playerType: PlayerType = PlayerType.solo
+    static let minSoloPlayers = 3
+    static let minTeams = 2
+    static let maxPlayers = 7
+
+    func setPlayerType(playerType: PlayerType) {
+        self.playerType = playerType
+    }
 
     func lessThenMinimumPlayers(players: [Player]) -> Bool {
-        return players.count < 3
+        if (playerType == PlayerType.solo) {
+            return players.count < PlayersValidator.minSoloPlayers
+        } else {
+            return players.count < PlayersValidator.minTeams
+        }
     }
 
     func moreThenMaximumPlayers(players: [Player]) -> Bool {
-        return players.count >= 7
+        return players.count >= PlayersValidator.maxPlayers
     }
 
     func IdenticalNames(players: [Player]) -> Bool {

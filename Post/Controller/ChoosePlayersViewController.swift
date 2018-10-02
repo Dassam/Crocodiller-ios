@@ -15,9 +15,9 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet var newGameButton: UIButton!
     @IBOutlet var addNewPlayerButton: UIBarButtonItem!
     @IBOutlet var soloGameButton: UIButton!
-    @IBOutlet var multiPlaeyrGameButton: UIButton!
+    @IBOutlet var multiPlayerGameButton: UIButton!
 
-
+    var playerType: PlayerType = PlayerType.solo
     var players = [Player]()
     var playersValidator: PlayersValidator?
 
@@ -35,6 +35,7 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
         playersTableView.delegate = self
         playersTableView.dataSource = self
         playersValidator = PlayersValidator()
+        selectPlayerType(playerType: PlayerType.solo)
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,15 +43,15 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     @IBAction func addPlayer(_ sender: Any) {
-        print("Добавил игрока")
+
         if (playersValidator?.moreThenMaximumPlayers(players: players))! {
-            let alert = UIAlertController(title: nil, message: "Игроков не может быть больше 7", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: getMaxPlayerErrorMessage(), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Добавить игрока", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: addPlayerMessage(), message: nil, preferredStyle: .alert)
             alert.addTextField() { (playerTF) in
-                playerTF.placeholder = "Введите имя игрока"
+                playerTF.placeholder = self.enterPlayerNameMessage()
             }
 
             alert.addAction(UIAlertAction(title: "Добавить", style: .default, handler: { _ in
@@ -65,7 +66,7 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
                     self.players.append(player)
                     self.playersTableView.reloadData()
                 } else {
-                    let alert = UIAlertController(title: nil, message: "Имя игрока не может быть пустым", preferredStyle: .alert)
+                    let alert = UIAlertController(title: nil, message: self.nonEmptyPlayerNameMessage(), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -79,14 +80,70 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
 
+    private func getMaxPlayerErrorMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return String(format: "Игроков не может быть больше %d", PlayersValidator.maxPlayers)
+        } else {
+            return String(format: "Команд не может быть больше %d", PlayersValidator.maxPlayers)
+        }
+    }
+
+    private func addPlayerMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return "Добавить игрока"
+        } else {
+            return "Добавить команду"
+        }
+    }
+
+    private func enterPlayerNameMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return "Введите имя игрока"
+        } else {
+            return "Введите название команды"
+        }
+    }
+
+    private func nonEmptyPlayerNameMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return "Имя игрока не может быть пустым"
+        } else {
+            return "Название команды не может быть пустым"
+        }
+    }
+
+    private func minPlayerErrorMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return String(format: "Чтобы начать игру нужно минимум %d игрока", PlayersValidator.minSoloPlayers)
+        } else {
+            return String(format: "Чтобы начать игру нужно минимум %d команды", PlayersValidator.minTeams)
+        }
+    }
+
+    private func matchPlayerErrorMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return "Имена ироков не могут совпадать"
+        } else {
+            return "Название команд не могут совпадать"
+        }
+    }
+
+    private func editPlayerNameErrorMessage() -> String {
+        if (playerType == PlayerType.solo) {
+            return "Редактировать имя игрока"
+        } else {
+            return "Редактировать название команды"
+        }
+    }
+
     @IBAction func nextVC(_ sender: UIButton) {
 
         if (playersValidator?.lessThenMinimumPlayers(players: players))! {
-            let alert = UIAlertController(title: nil, message: "Чтобы начать игру нужно минимум 3 игрока", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: minPlayerErrorMessage(), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         } else if (playersValidator?.IdenticalNames(players: players))! {
-            let alert = UIAlertController(title: nil, message: "Имена ироков не могут совпадать", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: matchPlayerErrorMessage(), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -110,26 +167,29 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = UITableViewCell()
         let player = players[indexPath.row].name
         cell.textLabel?.text = player
+        cell.backgroundColor = .clear
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else {
-            return
+        if editingStyle == .delete {
+            PersistenceService.context.delete(players[indexPath.row])
+
+            do {
+                players = try PersistenceService.context.fetch(Player.fetchRequest())
+            } catch let error as NSError {
+                print("Couldn't save \(error), \(error.userInfo)")
+            }
+
+            //PersistenceService.saveContext()
         }
 
-        //PersistenceService.context.delete(object)
-        //PersistenceService.context.save(updatedObject)﻿
-
-
-        self.players.remove(at: indexPath.row)
-        PersistenceService.saveContext()
-        playersTableView.deleteRows(at: [indexPath], with: .automatic)
+        playersTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: nil, message: "Редактировать имя игрока", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: editPlayerNameErrorMessage(), preferredStyle: .alert)
         alert.addTextField() { (playerTF) in
             playerTF.text = self.players[indexPath.row].name
         }
@@ -143,5 +203,28 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
         alert.addAction(UIAlertAction(title: "Закрыть", style: .default))
 
         self.present(alert, animated: true, completion: nil)
+    }
+
+    @IBAction func soloGameSelection(_ sender: UIButton) {
+        selectPlayerType(playerType: PlayerType.solo)
+    }
+
+    @IBAction func multiPlayerSelection(_ sender: UIButton) {
+        selectPlayerType(playerType: PlayerType.team)
+    }
+
+
+    func selectPlayerType(playerType: PlayerType) {
+        self.playerType = playerType
+        playersValidator?.playerType = playerType
+        if (playerType == PlayerType.solo) {
+            soloGameButton.alpha = 1
+            multiPlayerGameButton.alpha = 0.5
+            self.title = "Игроки"
+        } else {
+            soloGameButton.alpha = 0.5
+            multiPlayerGameButton.alpha = 1
+            self.title = "Команды"
+        }
     }
 }

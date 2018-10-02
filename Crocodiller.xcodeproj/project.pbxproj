@@ -11,7 +11,9 @@
 		5A483BD7206E58BC005B370D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A483BD6206E58BC005B370D /* GameViewController.swift */; };
 		5A52521D2070016100AEDDFE /* pattern_leather.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A52521C2070016000AEDDFE /* pattern_leather.png */; };
 		5A5F2C192075916C009DFC04 /* GameSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C182075916C009DFC04 /* GameSet.swift */; };
-		5A5F2C1B20762AB5009DFC04 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C1A20762AB5009DFC04 /* ResultsViewController.swift */; };
+		5A5F2C1B20762AB5009DFC04 /* ChooseDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */; };
+		5A61E6B6207973C000F38DBC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61E6B5207973C000F38DBC /* InformationViewController.swift */; };
+		5A8549982164120600E63B5A /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8549972164120600E63B5A /* PlayerType.swift */; };
 		5A85A01720756373004BFF6E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85A01620756373004BFF6E /* PersistenceService.swift */; };
 		5A85A01A20756B6A004BFF6E /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85A01820756B6A004BFF6E /* Player+CoreDataClass.swift */; };
 		5A85A01B20756B6A004BFF6E /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85A01920756B6A004BFF6E /* Player+CoreDataProperties.swift */; };
@@ -35,7 +37,9 @@
 		5A483BD6206E58BC005B370D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5A52521C2070016000AEDDFE /* pattern_leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern_leather.png; sourceTree = "<group>"; };
 		5A5F2C182075916C009DFC04 /* GameSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSet.swift; sourceTree = "<group>"; };
-		5A5F2C1A20762AB5009DFC04 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeckViewController.swift; sourceTree = "<group>"; };
+		5A61E6B5207973C000F38DBC /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		5A8549972164120600E63B5A /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
 		5A85A01620756373004BFF6E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		5A85A01820756B6A004BFF6E /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5A85A01920756B6A004BFF6E /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -96,8 +100,9 @@
 				799675C87998716191BCBC41 /* AppDelegate.swift */,
 				5AE76FD12072464800D513CC /* ChoosePlayersViewController.swift */,
 				5A483BD6206E58BC005B370D /* GameViewController.swift */,
+				5A61E6B5207973C000F38DBC /* InformationViewController.swift */,
 				79967F5429F53F3CC841BB89 /* MainViewController.swift */,
-				5A5F2C1A20762AB5009DFC04 /* ResultsViewController.swift */,
+				5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 				79967919448A4A7CFE96E15B /* CardLine.swift */,
 				5A5F2C182075916C009DFC04 /* GameSet.swift */,
 				5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */,
+				5A8549972164120600E63B5A /* PlayerType.swift */,
 				5A85A01620756373004BFF6E /* PersistenceService.swift */,
 				79967DC8083420BAF0E2CE9F /* PlayersValidator.swift */,
 				5A85A01820756B6A004BFF6E /* Player+CoreDataClass.swift */,
@@ -171,6 +177,12 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = YandI;
+				TargetAttributes = {
+					799673624E9154877B21D7DA = {
+						DevelopmentTeam = G6NPN9SLZM;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 7996719AFB885B4370921F45 /* Build configuration list for PBXProject "Crocodiller" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -213,10 +225,11 @@
 				799674E15E953209E3141507 /* AppDelegate.swift in Sources */,
 				799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */,
 				5A85A01720756373004BFF6E /* PersistenceService.swift in Sources */,
+				5A8549982164120600E63B5A /* PlayerType.swift in Sources */,
 				5A85A01B20756B6A004BFF6E /* Player+CoreDataProperties.swift in Sources */,
 				799678903698B42A9D88B3B7 /* MainViewController.swift in Sources */,
 				79967181FF2853099C894A90 /* CardLine.swift in Sources */,
-				5A5F2C1B20762AB5009DFC04 /* ResultsViewController.swift in Sources */,
+				5A5F2C1B20762AB5009DFC04 /* ChooseDeckViewController.swift in Sources */,
 				5A85A01A20756B6A004BFF6E /* Player+CoreDataClass.swift in Sources */,
 				5A5F2C192075916C009DFC04 /* GameSet.swift in Sources */,
 				5A33BBA62070380E00BE4DD5 /* LineGenerator.swift in Sources */,
@@ -225,6 +238,7 @@
 				799675A56B6F0EAEFC1D0788 /* Deck.swift in Sources */,
 				7996761B79C7894F20F2AA09 /* PlayersValidator.swift in Sources */,
 				79967D00FA69DDB13F192C04 /* Turn.swift in Sources */,
+				5A61E6B6207973C000F38DBC /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +375,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6NPN9SLZM;
 				INFOPLIST_FILE = Crocodiller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandi.Crocodiller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,10 +392,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6NPN9SLZM;
 				INFOPLIST_FILE = Crocodiller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandi.Crocodiller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
