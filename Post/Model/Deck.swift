@@ -11,9 +11,17 @@ import UIKit
 class Deck: Codable {
 
     let cardLines: [CardLine]
+    let title: String
+    let pk: Int
+    let image: String
+    let color: String
 
     private enum CodingKeys: String, CodingKey {
         case cardLines = "card_lines"
+        case title
+        case pk
+        case image
+        case color
     }
 
 }

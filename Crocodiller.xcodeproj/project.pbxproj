@@ -13,6 +13,7 @@
 		5A5F2C192075916C009DFC04 /* GameSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C182075916C009DFC04 /* GameSet.swift */; };
 		5A5F2C1B20762AB5009DFC04 /* ChooseDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */; };
 		5A61E6B6207973C000F38DBC /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61E6B5207973C000F38DBC /* InformationViewController.swift */; };
+		5A6785602166C59B00EB0E28 /* DeckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A67855F2166C59B00EB0E28 /* DeckRepository.swift */; };
 		5A8549982164120600E63B5A /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8549972164120600E63B5A /* PlayerType.swift */; };
 		5A85A01720756373004BFF6E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85A01620756373004BFF6E /* PersistenceService.swift */; };
 		5A85A01A20756B6A004BFF6E /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85A01820756B6A004BFF6E /* Player+CoreDataClass.swift */; };
@@ -39,6 +40,7 @@
 		5A5F2C182075916C009DFC04 /* GameSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSet.swift; sourceTree = "<group>"; };
 		5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeckViewController.swift; sourceTree = "<group>"; };
 		5A61E6B5207973C000F38DBC /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		5A67855F2166C59B00EB0E28 /* DeckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRepository.swift; sourceTree = "<group>"; };
 		5A8549972164120600E63B5A /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
 		5A85A01620756373004BFF6E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		5A85A01820756B6A004BFF6E /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				799672FFCE85601009A5811A /* Deck.swift */,
 				79967919448A4A7CFE96E15B /* CardLine.swift */,
+				5A67855F2166C59B00EB0E28 /* DeckRepository.swift */,
 				5A5F2C182075916C009DFC04 /* GameSet.swift */,
 				5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */,
 				5A8549972164120600E63B5A /* PlayerType.swift */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A483BD7206E58BC005B370D /* GameViewController.swift in Sources */,
+				5A6785602166C59B00EB0E28 /* DeckRepository.swift in Sources */,
 				799674E15E953209E3141507 /* AppDelegate.swift in Sources */,
 				799679A9C3011A28DFDE40B5 /* Crocodiller.xcdatamodeld in Sources */,
 				5A85A01720756373004BFF6E /* PersistenceService.swift in Sources */,

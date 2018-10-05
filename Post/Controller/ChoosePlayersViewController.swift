@@ -181,10 +181,8 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
             } catch let error as NSError {
                 print("Couldn't save \(error), \(error.userInfo)")
             }
-
             //PersistenceService.saveContext()
         }
-
         playersTableView.reloadData()
     }
 

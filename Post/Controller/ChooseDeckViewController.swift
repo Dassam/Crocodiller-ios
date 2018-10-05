@@ -10,9 +10,17 @@ import UIKit
 
 
 class ChooseDeckViewController: UIViewController {
-    
+
+    var deckRepository = DeckRepository()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "pattern_leather.png")!)
+        deckRepository.getDecksFromUrl(handler: ChooseDeckViewController.onDecksReceived)
     }
+
+    class func onDecksReceived(decks: [Deck]){
+        print(decks[0].title)
+    }
+
 }
