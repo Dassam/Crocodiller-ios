@@ -21,7 +21,7 @@ class DeckRepository {
             guard let dataResponse = data, error == nil else {
                 print(error?.localizedDescription ?? "Response Error")
                 return
-            };
+            }
             do {
                 let decks: [Deck] = try self.decoder.decode([Deck].self, from: dataResponse)
                 handler(decks)

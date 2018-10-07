@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A33BBA62070380E00BE4DD5 /* LineGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */; };
 		5A483BD7206E58BC005B370D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A483BD6206E58BC005B370D /* GameViewController.swift */; };
+		5A4A048E216A6BC500E51E3D /* DecksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A048D216A6BC500E51E3D /* DecksTableViewCell.swift */; };
 		5A52521D2070016100AEDDFE /* pattern_leather.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A52521C2070016000AEDDFE /* pattern_leather.png */; };
 		5A5F2C192075916C009DFC04 /* GameSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C182075916C009DFC04 /* GameSet.swift */; };
 		5A5F2C1B20762AB5009DFC04 /* ChooseDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGenerator.swift; sourceTree = "<group>"; };
 		5A483BD6206E58BC005B370D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5A4A048D216A6BC500E51E3D /* DecksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksTableViewCell.swift; sourceTree = "<group>"; };
 		5A52521C2070016000AEDDFE /* pattern_leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern_leather.png; sourceTree = "<group>"; };
 		5A5F2C182075916C009DFC04 /* GameSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSet.swift; sourceTree = "<group>"; };
 		5A5F2C1A20762AB5009DFC04 /* ChooseDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDeckViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				799672FFCE85601009A5811A /* Deck.swift */,
 				79967919448A4A7CFE96E15B /* CardLine.swift */,
 				5A67855F2166C59B00EB0E28 /* DeckRepository.swift */,
+				5A4A048D216A6BC500E51E3D /* DecksTableViewCell.swift */,
 				5A5F2C182075916C009DFC04 /* GameSet.swift */,
 				5A33BBA52070380E00BE4DD5 /* LineGenerator.swift */,
 				5A8549972164120600E63B5A /* PlayerType.swift */,
@@ -240,6 +243,7 @@
 				5AE76FD22072464800D513CC /* ChoosePlayersViewController.swift in Sources */,
 				79967E06ACDE2B49D16CECAE /* MyColors.swift in Sources */,
 				799675A56B6F0EAEFC1D0788 /* Deck.swift in Sources */,
+				5A4A048E216A6BC500E51E3D /* DecksTableViewCell.swift in Sources */,
 				7996761B79C7894F20F2AA09 /* PlayersValidator.swift in Sources */,
 				79967D00FA69DDB13F192C04 /* Turn.swift in Sources */,
 				5A61E6B6207973C000F38DBC /* InformationViewController.swift in Sources */,

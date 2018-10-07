@@ -69,7 +69,7 @@ class LineGenerator {
     }
 
     func nextLine() -> CardLine {
-        var index = arc4random_uniform(UInt32(cardLinesActive.count));
+        let index = arc4random_uniform(UInt32(cardLinesActive.count));
         return cardLinesActive.remove(at: Int(index))
     }
 

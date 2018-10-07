@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -352,6 +353,45 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EUS-ls-SMI">
                                 <rect key="frame" x="0.0" y="20" width="375" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="deckCell" rowHeight="82" id="3gj-D3-vcx" customClass="DecksTableViewCell" customModule="Crocodiller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gj-D3-vcx" id="4gf-k5-OC0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIe-1i-fzv">
+                                                    <rect key="frame" x="15" y="11" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="MDR-s2-pss"/>
+                                                        <constraint firstAttribute="height" constant="60" id="e2E-Ea-dty"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RY-Um-PEp">
+                                                    <rect key="frame" x="83" y="31" width="257" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vIe-1i-fzv" firstAttribute="bottom" secondItem="4gf-k5-OC0" secondAttribute="bottomMargin" id="3Jh-Ny-Akx"/>
+                                                <constraint firstItem="vIe-1i-fzv" firstAttribute="top" secondItem="4gf-k5-OC0" secondAttribute="topMargin" id="GGx-hc-pKs"/>
+                                                <constraint firstItem="vIe-1i-fzv" firstAttribute="leading" secondItem="4gf-k5-OC0" secondAttribute="leadingMargin" id="gCg-x5-EYv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deckIcon" destination="vIe-1i-fzv" id="NfQ-Kj-jHn"/>
+                                            <outlet property="deckName" destination="0RY-Um-PEp" id="JKT-5K-2y6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="J8j-OU-Px6" id="LvX-gA-fwD"/>
+                                    <outlet property="delegate" destination="J8j-OU-Px6" id="2SL-dN-8qs"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -365,6 +405,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WmQ-vN-XqG"/>
                     </view>
+                    <connections>
+                        <outlet property="decksTableView" destination="EUS-ls-SMI" id="zA5-q4-nSB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUf-Lu-xQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

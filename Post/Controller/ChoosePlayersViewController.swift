@@ -34,6 +34,7 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
 
         playersTableView.delegate = self
         playersTableView.dataSource = self
+
         playersValidator = PlayersValidator()
         selectPlayerType(playerType: PlayerType.solo)
 
@@ -202,6 +203,11 @@ class ChoosePlayersViewController: UIViewController, UITableViewDelegate, UITabl
 
         self.present(alert, animated: true, completion: nil)
     }
+
+
+
+
+//------------------------- Выбор типа игры ------------------------//
 
     @IBAction func soloGameSelection(_ sender: UIButton) {
         selectPlayerType(playerType: PlayerType.solo)
